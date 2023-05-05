@@ -72,7 +72,7 @@ def run_discord_bot(p_token=None):
     try:
       if l_token is None:
         print(
-          "Discord token is not set! If you have not set up a not visit https://discord.com/developers/docs/getting-started to create a bot."
+          "Discord token is not set! If you have not set up a bot visit https://discord.com/developers/docs/getting-started to create a bot."
         )
         l_token = input("Enter the a valid TOKEN to continue: ")
       l_token = client.run(l_token)
