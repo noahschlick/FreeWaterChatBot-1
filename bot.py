@@ -14,14 +14,11 @@ async def send_message(message, user_message, is_private):
   try:
     responseJSON = await freeWaterAPI.getAnswer(user_message)
     response = responseJSON['response']
-    await message.author.send(
-      response) if is_private else await message.channel.send(response)
+    await message.author.send(response) if is_private else await message.channel.send(response)
   except Exception as e:
     print(e)
     error_response = "I am currently not connected to the AI that helps me answer your question."
-    await message.author.send(error_response
-                              ) if is_private else await message.channel.send(
-                                error_response)
+    await message.author.send(error_response) if is_private else await message.channel.send(error_response)
 
 
 """
@@ -72,7 +69,7 @@ def run_discord_bot(p_token=None):
     try:
       if l_token is None:
         print(
-          "Discord token is not set! If you have not set up a not visit https://discord.com/developers/docs/getting-started to create a bot."
+          "Discord token is not set! If you have not set up a bot visit https://discord.com/developers/docs/getting-started to create a bot."
         )
         l_token = input("Enter the a valid TOKEN to continue: ")
       l_token = client.run(l_token)
